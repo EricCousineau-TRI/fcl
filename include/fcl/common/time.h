@@ -66,6 +66,10 @@ duration seconds(double sec);
 FCL_EXPORT
 double seconds(const duration &d);
 
+FCL_EXPORT
+void print_hack_version_info();
+
+
 } // namespace time
 } // namespace fcl
 

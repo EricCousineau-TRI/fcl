@@ -37,6 +37,8 @@
 
 #include "fcl/common/time.h"
 
+#include <iostream>
+
 namespace fcl
 {
 
@@ -61,6 +63,14 @@ duration seconds(double sec)
 double seconds(const duration &d)
 {
   return std::chrono::duration<double>(d).count();
+}
+
+void print_hack_version_info() {
+#ifdef FCL_HAVE_OCTOMAP
+  std::cout << "FCL_HAVE_OCTOMAP: true" << std::endl;
+#else
+  std::cout << "FCL_HAVE_OCTOMAP: false !!!" << std::endl;
+#endif
 }
 
 } // namespace time
